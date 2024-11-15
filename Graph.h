@@ -10,6 +10,7 @@ class Graph {
 private:
     int vertices;
     int** adjMatriz;
+    int minDistance(int* distances, bool* visited);
 public:
     Graph(int vertices): vertices(vertices) {
         adjMatriz = new int*[vertices];
@@ -26,8 +27,11 @@ public:
         }
         delete[] adjMatriz;
     }
-    void addEdge(int src,int dest);
+    void addEdge(int src,int dest, int weight);
     void displayMatrix();
+    void BFS(int startIndex);
+    void DFS(int startIndex);
+    void dijkstra(int startIndex);
 
 };
 
